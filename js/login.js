@@ -14,11 +14,16 @@ function color(){
     document.getElementById("fallo").style.display = "inline"; 
     document.getElementById("contraseña").classList.add("error"); 
 }
-
+function guardarDatos() {
+    sessionStorage.nombre = document.getElementById("usuario").value;
+    sessionStorage.password = document.getElementById("contraseña").value;
+}
 function login(){
     var usuario = document.getElementById("usuario").value;
     var contraseña = document.getElementById("contraseña").value;
     if (usuario!="" && contraseña!=""){
+          // guardar datos
+          guardarDatos()
             window.location.href='index.html';
     }else{
             color();
