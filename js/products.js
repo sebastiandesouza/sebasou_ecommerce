@@ -3,7 +3,7 @@
 //elementos HTML presentes.
 
 var categoriesArray = [];
-
+// muestra los productos del json
 function showCategoriesList(array){
 
     let htmlContentToAppend = "";

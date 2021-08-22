@@ -3,6 +3,7 @@
 <html lang="en">
   <head>
     <script type="text/javascript">
+    //Recupera datos guardados del login y si no hay datos vuelve al login
       function recuperarDatos() {
   if ((sessionStorage.nombre == undefined) && (sessionStorage.password == undefined)) {
     window.location.href='login.html'; }
