@@ -37,14 +37,20 @@
   </style>
 </head>
 
-<body class="text-center">
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 08/08/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+
+  <div class="login-box">
+    <h1>Iniciar sesion</h1>
+    <form>
+      <!-- USERNAME INPUT -->
+      <label for="username">Usuario:</label>
+      <input type="text" id="usuario" placeholder="Ingrese usuario" onclick="nocolor()"><br>
+      <!-- PASSWORD INPUT -->
+      <label for="password">Contraseña:</label>
+      <input type="password" id="contraseña"placeholder="Ingrese contraseña" onclick="nocolor()"><br>
+      <span id="fallo" style="display: none">Falta ingresar datos<br></span>
+      <input type="button" value="Ingresar" onclick="login()">
+      
+    </form>
   </div>
 
   <script src="js/init.js"></script>
