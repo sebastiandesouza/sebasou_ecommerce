@@ -2,12 +2,12 @@
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
   <head>
-    <script type="text/javascript">
+    <script type="text/javascript"> 
     //Recupera datos guardados del login y si no hay datos vuelve al login
       function recuperarDatos() {
   if ((sessionStorage.nombre == undefined) && (sessionStorage.password == undefined)) {
     window.location.href='login.html'; }
-  }
+   }
     recuperarDatos()
   </script>
   
@@ -30,6 +30,7 @@
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+        <p id="usuar" class="py-2 d-none d-md-inline-block">Usuario</p>
       </div>
     </nav>
     <main role="main">
@@ -114,5 +115,8 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
+     <script type="text/javascript"> 
+   
+      </script>
   </body>
 </html>
