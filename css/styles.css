@@ -208,3 +208,19 @@ span{
   background: #b1a78a;
   color: #000;
 }
+.negro{
+  color:black
+  }
+/*----------- CAJA ----------- */
+.caja { 
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+  color: black; 
+  font-size: 18px; 
+  font-weight: 400; 
+  text-align: left; 
+  background: #ffffff; 
+  margin: 0 0 25px; 
+  overflow: hidden; 
+  padding: 20px; 
+  
+  border: 2px solid #5878ca;}
