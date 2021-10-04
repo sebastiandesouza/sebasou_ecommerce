@@ -7,6 +7,22 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/pro
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 
+
+function menuUsuario(){
+let menuu = "";
+menuu += `<div class="dropdown">
+<a id="usuar" class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ `+ sessionStorage.nombre + `
+</a>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+  <a class="dropdown-item" href="cart.html">Mi carrito</a>
+  <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+  <a class="dropdown-item" href="login.html">Cerrar sesion</a>
+</div>
+</div>`;
+document.getElementById("menu").innerHTML += menuu;
+
+}
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
 }
@@ -39,13 +55,22 @@ var getJSONData = function(url){
         return result;
     });
 }
+function cerrarSesion(){
+  window.location.href='login.html';
+}
+menuUsuario()
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
 
-  var usuario = "Usuario: " + sessionStorage.nombre;
-  document.getElementById("usuar").innerHTML = usuario;
+ 
+      //Recupera datos guardados del login y si no hay datos vuelve al login
+      function recuperarDatos() {
+  if ((sessionStorage.nombre == undefined) && (sessionStorage.password == undefined)) {
+    window.location.href='login.html'; }
+   }
+    recuperarDatos()
 });
 

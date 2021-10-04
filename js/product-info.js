@@ -1,5 +1,6 @@
 var category = {};
 var coments = {};
+var categorys = {};
 
 function showImagesGallery(array){
 
@@ -161,7 +162,35 @@ document.addEventListener("DOMContentLoaded", function(e){
             //Muestro las imagenes en forma de galería
             showImagesGallery(category.images);
             showcoments()
+            var productos = category.relatedProducts;
         }
+        getJSONData(PRODUCTS_URL).then(function(resultObj){
+            if (resultObj.status === "ok")
+            {
+            
+                categorys = resultObj.data;
+    let mostra="";
+                for(let i = 0; i <categorys.length; i++){
+                    let producto = categorys[i];
+                    if (producto = productos[i]){
+                        let pro = categorys[producto];
+                        mostra += `
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div class="d-block mb-4 h-100">
+                                <p>` + pro.name + `</p>
+                                <img src="` + pro.imgSrc + `"  class="img-thumbnail">
+                              
+                            </div>
+                        </div>
+                        `
+                
+                        document.getElementById("productosRelacionados").innerHTML = mostra;
+                    } 
+                    
+                }
+            }
+            
+        });
     });
-
+    
 });
